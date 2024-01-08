@@ -1,0 +1,51 @@
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="Titre">Title</label>
+  <div class="col-sm-7">
+    <input
+      readonly
+      class="form-control"
+      id="Titre"
+      value="<%= model.Titre %>"
+    />
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="Auteur">Author</label>
+  <div class="col-sm-7">
+    <input
+      readonly
+      class="form-control"
+      id="Auteur"
+      value="<%= model.Auteur %>"
+    />
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="Quantite">Quantity</label>
+  <div class="col-sm-7">
+    <input
+      readonly
+      class="form-control"
+      name="Quantite"
+      value="<%= model.Quantite %>"
+    />
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="Commentaires">Description</label>
+  <div class="col-sm-7">
+    <textarea
+      readonly
+      class="form-control"
+      cols="20"
+      id="Commentaires"
+      maxlength="32000"
+      rows="7"
+    >
+<%= model.Commentaires %></textarea
+    >
+  </div>
+</div>

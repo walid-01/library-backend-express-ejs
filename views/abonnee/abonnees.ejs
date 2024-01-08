@@ -1,0 +1,59 @@
+<%- include("../_header") -%>
+
+<h1>Users List (<%= model.length %>)</h1>
+
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th class="d-print-none">
+          <a class="btn btn-sm btn-success" href="/abonnees/create">Add +</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const abonnee of model) { %>
+      <tr
+        class="clickable-row"
+        data-href="/abonnees/compte/<%= abonnee.Abonnee_ID %>"
+      >
+        <td><%= abonnee.Nom %></td>
+        <td><%= abonnee.Prenom %></td>
+        <td><%= abonnee.NumTel %></td>
+        <td><%= abonnee.Email %></td>
+        <td><%= abonnee.Adresse %></td>
+        <td class="d-print-none">
+          <a
+            class="btn btn-sm btn-warning"
+            href="/abonnees/edit/<%= abonnee.Abonnee_ID %>"
+            >Edit</a
+          >
+          <a
+            class="btn btn-sm btn-danger"
+            href="/abonnees/delete/<%= abonnee.Abonnee_ID %>"
+            >Delete</a
+          >
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("../_footer") -%>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const rows = document.querySelectorAll(".clickable-row");
+    rows.forEach((row) => {
+      row.addEventListener("click", () => {
+        window.location.href = row.dataset.href;
+      });
+    });
+  });
+</script>

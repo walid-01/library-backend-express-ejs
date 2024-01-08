@@ -1,0 +1,39 @@
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="Abonnee_ID">User</label>
+  <div class="col-sm-4">
+    <select class="form-control" name="Abonnee_ID">
+      <% for (const abone of abonnees) { %>
+        <option value="<%= abone.Abonnee_ID %>" <% if (model.Abonnee_ID === abone.Abonnee_ID) { %> selected <% } %>>
+          <%= abone.Nom %> <%= abone.Prenom %>
+        </option>
+      <% } %>
+    </select>
+  </div>
+</div>
+
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="Livre_ID">Book</label>
+  <div class="col-sm-4">
+    <select class="form-control" name="Livre_ID">
+      <% for (const livre of livres) { %>
+        <option value="<%= livre.Livre_ID %>" <% if (model.Livre_ID === livre.Livre_ID) { %> selected <% } %>>
+          <%= livre.Titre %>
+        </option>
+      <% } %>
+    </select>
+  </div>
+</div>
+
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="Date">Date</label>
+  <div class="col-sm-4">
+    <input
+      class="form-control"
+      type="date"
+      name="Date"
+      value="<%= model.Date || new Date().toISOString().split('T')[0] %>"
+    />
+  </div>
+</div>

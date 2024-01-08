@@ -1,0 +1,35 @@
+<%- include("../_header") -%>
+
+<h1>Book : <%= model[0].Titre %></h1>
+
+<div>
+  <p><strong>Author :</strong> <%= model[0].Auteur %></p>
+  <p><strong>Available Quantity:</strong> <%= model[0].Quantite %></p>
+  <p><strong>Description :</strong> <%= model[0].Commentaires %></p>
+</div>
+
+<h2>Number of borrowers (<%= model.length %>)</h2>
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Borrow_ID</th>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Date d'emprunt</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const emprunt of model) { %>
+      <tr>
+        <td><%= emprunt.Emprunt_ID %></td>
+        <td><%= emprunt.Nom %></td>
+        <td><%= emprunt.Prenom %></td>
+        <td><%= emprunt.Date %></td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("../_footer") -%>

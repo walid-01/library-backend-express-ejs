@@ -1,0 +1,57 @@
+<%- include("../_header") -%>
+
+<h1>Liste des livres (<%= model.length %>)</h1>
+
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Available Quantity</th>
+        <th>Description</th>
+        <th class="d-print-none">
+          <a class="btn btn-sm btn-success" href="/livres/create">Add +</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const book of model) { %>
+      <tr
+        class="clickable-row"
+        data-href="/livres/details/<%= book.Livre_ID %>"
+      >
+        <td><%= book.Titre %></td>
+        <td><%= book.Auteur %></td>
+        <td><%= book.Quantite %></td>
+        <td><%= book.Commentaires %></td>
+        <td class="d-print-none">
+          <a
+            class="btn btn-sm btn-warning"
+            href="/livres/edit/<%= book.Livre_ID %>"
+            >Edit</a
+          >
+          <a
+            class="btn btn-sm btn-danger"
+            href="/livres/delete/<%= book.Livre_ID %>"
+            >Delete</a
+          >
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("../_footer") -%>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const rows = document.querySelectorAll(".clickable-row");
+    rows.forEach((row) => {
+      row.addEventListener("click", () => {
+        window.location.href = row.dataset.href;
+      });
+    });
+  });
+</script>

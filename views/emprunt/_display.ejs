@@ -1,0 +1,31 @@
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="Abonnee_ID">User</label>
+  <div class="col-sm-6">
+    <input type="hidden" name="Abonnee_ID" value="<%= model.Abonnee_ID %>" />
+    <input
+      readonly
+      class="form-control"
+      value="<%= abonne.Nom %> <%= abonne.Prenom %>"
+    />
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="Livre_ID">Book</label>
+  <div class="col-sm-6">
+    <input type="hidden" name="Livre_ID" value="<%= model.Livre_ID %>" />
+    <input readonly class="form-control" value="<%= livre.Titre %>" />
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="Date">Date</label>
+  <div class="col-sm-6">
+    <input
+      readonly
+      class="form-control"
+      name="Date"
+      value="<%= model.Date %>"
+    />
+  </div>
+</div>

@@ -1,0 +1,21 @@
+{
+  "Nom": "apptest-master",
+  "version": "1.0.0",
+  "description": "Ce dépôt correspond à l'application développée lors de la rédaction du tutoriel [Application CRUD avec Express et SQlite en 10 étapes](https://blog.pagesd.info/2023/09/11/crud-avec-express-sqlite-10-etapes/).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.7-rc.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
